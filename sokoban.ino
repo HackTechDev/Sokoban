@@ -13,7 +13,8 @@ const int IN3 = 12; // Y axis motor in3 pin number
 const int IN4 = 13; // X axis motor in4 pin number
 const int ENB = 10;
 
-const int SPEED = 200;
+const int SPEEDA = 150; // Set the speed motor UP/DOWN
+const int SPEEDB = 150; // Set the speed motor LEFT/RIGHT
 
 int axeX = 0;
 int axeY = 0;
@@ -31,8 +32,8 @@ void setup() {
 }
 
 void loop() {
-  analogWrite(ENA,250);
-  analogWrite(ENB,250);
+  analogWrite(ENA,SPEEDA);
+  analogWrite(ENB,SPEEDB);
   // Y axis
   if (digitalRead(btnUp)== HIGH) {
     runMotor(IN1,IN2,HIGH);
